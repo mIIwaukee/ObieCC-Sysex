@@ -1,0 +1,384 @@
+Oberheim Matrix 6 SYSEX
+
+[MODEL]
+ProgramName=BC Manager
+ProgramVersion=4.0.0
+ManufacturerName=Oberheim
+ManufacturerID=10
+ModelName=Matrix 6 2.15
+ModelID=06
+DevicePosition=BeforeModel
+MinDevice=00
+MaxDevice=1F
+DefaultDevice=06
+Command=
+AddressLength=1
+AfterData=
+ChecksumMethod=
+ChecksumStart=
+FileVersion=1
+FileAuthor=mIIwaukee
+Comment=Whoop
+
+{ DCO1
+00 | 00 - 3F | val ;DCO1 Frequency in Semitones (0-63)
+01 | 00 - 7F | val ;DCO1 Frequency Mod by LFO1 (-63-63)
+
+03 | 00 - 3F | val ;DCO1 Pulse Width (0-63)
+04 | 00 - 7F | val ;DCO1 Pulse Width Mod by LFO2 (-63-63)
+
+05 | 00 - 3F | val ;DCO1 Waveshape (0-63) Saw > Triangle
+
+06 | 00 - 03 | val ;DCO1 Waveform
+06 | 00 - 00 | 00  ;DCO1 Waveform Off
+06 | 01 - 01 | 01  ;DCO1 Waveform Pulse
+06 | 02 - 02 | 02  ;DCO1 Waveform Wave
+06 | 03 - 03 | 03  ;DCO1 Waveform Both
+
+07 | 00 - 03 | val ;DCO1 Fixed Control
+07 | 00 - 00 | 00  ;DCO1 Fixed Control Off
+07 | 01 - 01 | 01  ;DCO1 Fixed Control Pitch Blend
+07 | 02 - 02 | 02  ;DCO1 Fixed Control Vibrato
+07 | 03 - 03 | 03  ;DCO1 Fixed Control Both
+}
+{ DCO2
+0A | 00 - 3F | val ;DCO2 Frequency in Semitones (0-63)
+0B | 00 - 7F | val ;DCO2 Frequency Mod by LFO1 (-63-63)
+
+0D | 00 - 3F | val ;DCO2 Pulse Width (0-63)
+0E | 00 - 7F | val ;DCO2 Pulse Width Mod by LFO2 (-63-63)
+
+0F | 00 - 3F | val ;DCO2 Waveshape (0-63) Saw > Triangle
+
+10 | 00 - 04 | val ;DCO2 Waveform
+10 | 00 - 00 | 00  ;DCO2 Waveform Off
+10 | 01 - 01 | 01  ;DCO2 Waveform Pulse
+10 | 02 - 02 | 02  ;DCO2 Waveform Wave
+10 | 03 - 03 | 03  ;DCO2 Waveform Both
+10 | 04 - 04 | 04  ;DCO2 Waveform Noise
+
+11 | 00 - 03 | val ;DCO2 Fixed Control
+11 | 00 - 00 | 00  ;DCO2 Fixed Control Off
+11 | 01 - 01 | 01  ;DCO2 Fixed Control Pitch Blend
+11 | 02 - 02 | 02  ;DCO2 Fixed Control Vibrato
+11 | 03 - 03 | 03  ;DCO2 Fixed Control Both
+}
+
+{ DCO Mods
+0C | 00 - 3F | val ;DCO Detune (-31+31)
+14 | 00 - 3F | val ;DCO Mix (DC02 0-63 DC01)
+
+09 | 00 - 01 | val ;DCO1 Click (on/off)
+09 | 00 - 00 | 00  ;DCO1 Click Off
+09 | 01 - 01 | 01  ;DCO1 Click On
+
+13 | 00 - 01 | val ;DCO2 Click (on/off)
+13 | 00 - 00 | 00  ;DCO2 Click Off
+13 | 01 - 01 | 01  ;DCO2 Click On
+
+02 | 00 - 03 | val ;DCO Sync (off-soft-med-hard)
+02 | 00 - 00 | 00  ;DCO Sync Off
+02 | 01 - 01 | 01  ;DCO Sync Soft
+02 | 02 - 02 | 02  ;DCO Sync Medium
+02 | 03 - 03 | 03  ;DCO Sync Hard
+
+08 | 00 - 01 | val ;DCO1 Keyboard Mods
+08 | 00 - 00 | 00  ;DCO1 Keyboard Mods Keyboard
+08 | 01 - 01 | 01  ;DCO1 Keyboard Mods Portamento
+
+12 | 00 - 02 | val ;DCO2 Keyboard Mods
+12 | 00 - 00 | 00  ;DCO2 Keyboard Mods Off / Drone
+12 | 01 - 01 | 01  ;DCO2 Keyboard Mods Portamento
+12 | 02 - 02 | 02  ;DCO2 Keyboard Mods Keyboard Tracking
+}
+{ VCF
+15 | 00 - 7F | val ;VCF Cutoff Frequency Semitones (0-127)
+18 | 00 - 3F | val ;VCF Resonance (0-63)
+
+16 | 00 - 7F | val ;VCF Mod by ENV1 (-63-63)
+17 | 00 - 7F | val ;VCF Mod by PRESSURE (-63-63)
+
+19 | 00 - 03 | val ;VCF Mod by Lev  
+19 | 00 - 00 | 00  ;VCF Mod by Lev Off
+19 | 01 - 01 | 01  ;VCF Mod by Lev Pitch Bend
+19 | 02 - 02 | 02  ;VCF Mod by Lev Vibrato
+19 | 03 - 03 | 03  ;VCF Mod by Lev  Both
+
+1A | 00 - 01 | val ;VCF Keyboard Mods
+1A | 00 - 00 | 00  ;VCF Keyboard Mods Portamento
+1A | 01 - 01 | 01  ;VCF Keyboard Mods Keyboard Tracking
+
+1E | 00 - 3F | val ;FM Amount (0-63)
+1F | 00 - 7F | val ;FM Mod by ENV3 (-63-63)
+20 | 00 - 7F | val ;FM Mod by PRESSURE (-63-63)
+}
+{ Tracking
+21 | 01 - 14 | val ;Tracking Sampled Source S&H (1-20)
+21 | 01 - 01 | val ;Tracking Sampled Source S&H Env1
+21 | 02 - 02 | val ;Tracking Sampled Source S&H Env2
+21 | 03 - 03 | val ;Tracking Sampled Source S&H Env3
+21 | 04 - 04 | val ;Tracking Sampled Source S&H LFO1
+21 | 05 - 05 | val ;Tracking Sampled Source S&H LFO2
+21 | 06 - 06 | val ;Tracking Sampled Source S&H Vibrato
+21 | 07 - 07 | val ;Tracking Sampled Source S&H Ramp1
+21 | 08 - 08 | val ;Tracking Sampled Source S&H Ramp2
+21 | 09 - 09 | val ;Tracking Sampled Source S&H Keyboard
+21 | 0A - 0A | val ;Tracking Sampled Source S&H Portamento
+21 | 0B - 0B | val ;Tracking Sampled Source S&H Tracking Generator
+21 | 0C - 0C | val ;Tracking Sampled Source S&H Keyboard Gate
+21 | 0D - 0D | val ;Tracking Sampled Source S&H Velocity
+21 | 0E - 0E | val ;Tracking Sampled Source S&H Release Velocity
+21 | 0F - 0F | val ;Tracking Sampled Source S&H Channel Pressure
+21 | 10 - 10 | val ;Tracking Sampled Source S&H Pedal 1 Sustain
+21 | 11 - 11 | val ;Tracking Sampled Source S&H Pedal 2
+21 | 12 - 12 | val ;Tracking Sampled Source S&H Lev1 Pitch Blend
+21 | 13 - 13 | val ;Tracking Sampled Source S&H Lev2 CC Mod Wheel
+21 | 14 - 14 | val ;Tracking Sampled Source S&H Lev3 CC Breath
+
+22 | 00 - 3F | val ;Tracking Point 1 (0-63)
+23 | 00 - 3F | val ;Tracking Point 2 (0-63)
+24 | 00 - 3F | val ;Tracking Point 3 (0-63)
+25 | 00 - 3F | val ;Tracking Point 4 (0-63)
+26 | 00 - 3F | val ;Tracking Point 5 (0-63)
+}
+{ VCA
+1B | 00 - 3F | val ;VCA1 Amount (0-63)
+1C | 00 - 7F | val ;VCA1 Mod by VELOCITY (-63-63)
+1D | 00 - 7F | val ;VCA2 Mod by ENV2 (-63-63)
+}
+{ Keyboard
+30 | 00 - 03 | val ;Voice Assign
+30 | 00 - 00 | 00  ;Voice Assign Reassign
+30 | 01 - 01 | 01  ;Voice Assign Rotate
+30 | 02 - 02 | 02  ;Voice Assign Unison
+30 | 03 - 03 | 03  ;Voice Assign Rob
+
+2C | 00 - 3F | val ;Portamento Rate (0-63)
+2D | 00 - 7F | val ;Portamento Mod by VELOCITY (-63-63)
+
+2E | 00 - 02 | val ;Portamento Mode 
+2E | 00 - 00 | 00  ;Portamento Mode Linear
+2E | 01 - 01 | 01  ;Portamento Mode Constant 
+2E | 02 - 02 | 02  ;Portamento Mode Exponential
+
+2F | 00 - 01 | val ;Portamento Legato (on/off)
+2F | 00 - 00 | 00  ;Portamento Legato Off
+2F | 01 - 01 | 01  ;Portamento Legato On
+}
+{ LFO1
+50 | 00 - 3F | val ;LFO1 Rate (0-63)
+
+52 | 00 - 07 | val ;LFO1 Waveshape 
+52 | 00 - 00 | 00  ;LFO1 Waveshape Triangle
+52 | 01 - 01 | 01  ;LFO1 Waveshape Up Saw
+52 | 02 - 02 | 02  ;LFO1 Waveshape Down Saw
+52 | 03 - 03 | 03  ;LFO1 Waveshape Square
+52 | 04 - 04 | 04  ;LFO1 Waveshape Random
+52 | 05 - 05 | 05  ;LFO1 Waveshape Noise
+52 | 06 - 06 | 06  ;LFO1 Waveshape Sample & Hold
+52 | 07 - 07 | 07  ;LFO1 Waveshape Not Used
+
+51 | 00 - 7F | val ;LFO1 Mod by PRESSURE (-63-63)
+55 | 00 - 7F | val ;LFO1 AMP by RAMP1 (-63-63)
+
+57 | 00 - 01 | val ;LFO1 Lag (on/off)
+57 | 00 - 00 | 00  ;LFO1 Lag Off
+57 | 01 - 01 | 01  ;LFO1 Lag On
+
+56 | 00 - 03 | val ;LFO1 Trigger 
+56 | 00 - 00 | 00  ;LFO1 Trigger Off
+56 | 01 - 01 | 01  ;LFO1 Trigger Single  
+56 | 02 - 02 | 02  ;LFO1 Trigger Multi 
+56 | 03 - 03 | 03  ;LFO1 Trigger External 
+
+54 | 00 - 3F | val ;LFO1 Amplitude (0-63)
+
+53 | 00 - 1F | val ;LFO1 Retrigger (0-31)
+
+58 | 01 - 14 | val ;LFO1 Sampled Source S&H (1-20)
+58 | 01 - 01 | val ;LFO1 Sampled Source S&H Env1
+58 | 02 - 02 | val ;LFO1 Sampled Source S&H Env2
+58 | 03 - 03 | val ;LFO1 Sampled Source S&H Env3
+58 | 04 - 04 | val ;LFO1 Sampled Source S&H LFO1
+58 | 05 - 05 | val ;LFO1 Sampled Source S&H LFO2
+58 | 06 - 06 | val ;LFO1 Sampled Source S&H Vibrato
+58 | 07 - 07 | val ;LFO1 Sampled Source S&H Ramp1
+58 | 08 - 08 | val ;LFO1 Sampled Source S&H Ramp2
+58 | 09 - 09 | val ;LFO1 Sampled Source S&H Keyboard
+58 | 0A - 0A | val ;LFO1 Sampled Source S&H Portamento
+58 | 0B - 0B | val ;LFO1 Sampled Source S&H Tracking Generator
+58 | 0C - 0C | val ;LFO1 Sampled Source S&H Keyboard Gate
+58 | 0D - 0D | val ;LFO1 Sampled Source S&H Velocity
+58 | 0E - 0E | val ;LFO1 Sampled Source S&H Release Velocity
+58 | 0F - 0F | val ;LFO1 Sampled Source S&H Channel Pressure
+58 | 10 - 10 | val ;LFO1 Sampled Source S&H Pedal 1 Sustain
+58 | 11 - 11 | val ;LFO1 Sampled Source S&H Pedal 2
+58 | 12 - 12 | val ;LFO1 Sampled Source S&H Lev1 Pitch Blend
+58 | 13 - 13 | val ;LFO1 Sampled Source S&H Lev2 CC 2 Mod Wheel
+58 | 14 - 14 | val ;LFO1 Sampled Source S&H Lev3 CC Breath
+}
+{ LFO2
+5A | 00 - 3F | val ;LFO2 Rate (0-63)
+
+5C | 00 - 07 | val ;LFO2 Waveshape 
+5C | 00 - 00 | 00  ;LFO2 Waveshape Triangle
+5C | 01 - 01 | 01  ;LFO2 Waveshape Up Saw
+5C | 02 - 02 | 02  ;LFO2 Waveshape Down Saw
+5C | 03 - 03 | 03  ;LFO2 Waveshape Square
+5C | 04 - 04 | 04  ;LFO2 Waveshape Random
+5C | 05 - 05 | 05  ;LFO2 Waveshape Noise
+5C | 06 - 06 | 06  ;LFO2 Waveshape Sampled Modulation
+5C | 07 - 07 | 07  ;LFO2 Waveshape Not Used
+
+5B | 00 - 7F | val ;LFO2 Mod by KEYBOARD (-63-63)
+
+5F | 00 - 7F | val ;LFO2 AMP by RAMP2 (-63-63)
+
+61 | 00 - 01 | val ;LFO2 Lag (on/off)
+61 | 00 - 00 | 00  ;LFO2 Lag Off
+61 | 01 - 01 | 01  ;LFO2 Lag On
+
+60 | 00 - 03 | val ;LFO2 Trigger 
+60 | 00 - 00 | 00  ;LFO2 Trigger Off
+60 | 01 - 01 | 01  ;LFO2 Trigger Single  
+60 | 02 - 02 | 02  ;LFO2 Trigger Multi 
+60 | 03 - 03 | 03  ;LFO2 Trigger External 
+
+5E | 00 - 3F | val ;LFO2 Amplitude (0-63)
+
+5D | 00 - 1F | val ;LFO2 Retrigger (0-31)
+
+62 | 01 - 14 | val ;LFO2 Sampled Source S&H (1-20)
+62 | 01 - 01 | val ;LFO2 Sampled Source S&H Env1
+62 | 02 - 02 | val ;LFO2 Sampled Source S&H Env2
+62 | 03 - 03 | val ;LFO2 Sampled Source S&H Env3
+62 | 04 - 04 | val ;LFO2 Sampled Source S&H LFO1
+62 | 05 - 05 | val ;LFO2 Sampled Source S&H LFO2
+62 | 06 - 06 | val ;LFO2 Sampled Source S&H Vibrato
+62 | 07 - 07 | val ;LFO2 Sampled Source S&H Ramp1
+62 | 08 - 08 | val ;LFO2 Sampled Source S&H Ramp2
+62 | 09 - 09 | val ;LFO2 Sampled Source S&H Keyboard
+62 | 0A - 0A | val ;LFO2 Sampled Source S&H Portamento
+62 | 0B - 0B | val ;LFO2 Sampled Source S&H Tracking Generator
+62 | 0C - 0C | val ;LFO2 Sampled Source S&H Keyboard Gate
+62 | 0D - 0D | val ;LFO2 Sampled Source S&H Velocity
+62 | 0E - 0E | val ;LFO2 Sampled Source S&H Release Velocity
+62 | 0F - 0F | val ;LFO2 Sampled Source S&H Channel Pressure
+62 | 10 - 10 | val ;LFO2 Sampled Source S&H Pedal 1 Sustain
+62 | 11 - 11 | val ;LFO2 Sampled Source S&H Pedal 2
+62 | 12 - 12 | val ;LFO2 Sampled Source S&H Lev1 Pitch Blend
+62 | 13 - 13 | val ;LFO2 Sampled Source S&H Lev2 CC 2 Mod Wheel
+62 | 14 - 14 | val ;LFO2 Sampled Source S&H Lev3 CC # Breath
+}
+{ RAMP LFO
+28 | 00 - 3F | val ;RAMP1 Rate (0-63)
+
+29 | 00 - 03 | val ;RAMP1 Trigger
+29 | 00 - 00 | 00  ;RAMP1 Trigger Single
+29 | 01 - 01 | 01  ;RAMP1 Trigger Multi
+29 | 02 - 02 | 02  ;RAMP1 Trigger External
+29 | 03 - 03 | 03  ;RAMP1 Trigger Gated External
+
+
+2A | 00 - 3F | val ;RAMP2 Rate (0-63)
+
+2B | 00 - 03 | val ;RAMP2 Trigger
+2B | 00 - 00 | 00  ;RAMP2 Trigger Single
+2B | 01 - 01 | 01  ;RAMP2 Trigger Multi
+2B | 02 - 02 | 02  ;RAMP2 Trigger External
+2B | 03 - 03 | 03  ;RAMP2 Trigger Gated External
+
+}
+{ ENV1 VCF
+32 | 00 - 3F | val ;ENV1 Delay Time(0-63)
+33 | 00 - 3F | val ;ENV1 Attack Time (0-63)
+34 | 00 - 3F | val ;ENV1 Decay Time (0-63)
+35 | 00 - 3F | val ;ENV1 Sustain Level (0-63)
+36 | 00 - 3F | val ;ENV1 Release Time (0-63)
+37 | 00 - 3F | val ;ENV1 Amplitude (0-63)
+
+39 | 00 - 07 | val ;ENV1 Trigger 
+39 | 00 - 00 | 00  ;ENV1 Trigger Single
+39 | 01 - 01 | 01  ;ENV1 Trigger Single Reset
+39 | 02 - 02 | 02  ;ENV1 Trigger Multi  
+39 | 03 - 03 | 03  ;ENV1 Trigger Multi Reset
+39 | 04 - 04 | 04  ;ENV1 Trigger External Single
+39 | 05 - 05 | 05  ;ENV1 Trigger External Single Reset
+39 | 06 - 06 | 06  ;ENV1 Trigger External Multiple
+39 | 07 - 07 | 07  ;ENV1 Trigger External Multiple Reset
+
+3A | 00 - 03 | val ;ENV1 LFO Mode 
+3A | 00 - 00 | 00  ;ENV1 LFO Mode Normal
+3A | 01 - 01 | 01  ;ENV1 LFO Mode DADR
+3A | 02 - 02 | 02  ;ENV1 LFO Mode Freerun
+3A | 03 - 03 | 03  ;ENV1 LFO Mode Both
+
+38 | 00 - 7F | val ;ENV1 AMP Mod by VELOCITY (-63-63)
+
+3B | 00 - 02 | val ;ENV1 LFO Trigger 
+3B | 00 - 00 | 00  ;ENV1 LFO Trigger Off
+3B | 01 - 01 | 01  ;ENV1 LFO Trigger Gated LFO1
+3B | 02 - 02 | 02  ;ENV1 LFO Trigger LFO1
+}
+{ ENV2 VCA
+3C | 00 - 3F | val ;ENV2 Delay Time (0-63)
+3D | 00 - 3F | val ;ENV2 Attack Time (0-63)
+3E | 00 - 3F | val ;ENV2 Decay Time (0-63)
+3F | 00 - 3F | val ;ENV2 Sustain Level (0-63)
+40 | 00 - 3F | val ;ENV2 Release Time (0-63)
+41 | 00 - 3F | val ;ENV2 Amplitude (0-63)
+
+43 | 00 - 07 | val ;ENV2 Trigger 
+43 | 00 - 00 | 00  ;ENV2 Trigger Single
+43 | 01 - 01 | 01  ;ENV2 Trigger Single Reset
+43 | 02 - 02 | 02  ;ENV2 Trigger Multi  
+43 | 03 - 03 | 03  ;ENV2 Trigger Multi Reset
+43 | 04 - 04 | 04  ;ENV2 Trigger External Single
+43 | 05 - 05 | 05  ;ENV2 Trigger External Single Reset
+43 | 06 - 06 | 06  ;ENV2 Trigger External Multiple
+43 | 07 - 07 | 07  ;ENV2 Trigger External Multiple Reset
+
+44 | 00 - 03 | val ;ENV2 LFO Mode 
+44 | 00 - 00 | 00  ;ENV2 LFO Mode Normal
+44 | 01 - 01 | 01  ;ENV2 LFO Mode DADR
+44 | 02 - 02 | 02  ;ENV2 LFO Mode Freerun
+44 | 03 - 03 | 03  ;ENV2 LFO Mode Both
+
+42 | 00 - 7F | val ;ENV2 AMP Mod by VELOCITY (-63-63)
+
+45 | 00 - 02 | val ;ENV2 LFO Trigger 
+45 | 00 - 00 | 00  ;ENV2 LFO Trigger Off
+45 | 01 - 01 | 01  ;ENV2 LFO Trigger Gated LFO1
+45 | 02 - 02 | 02  ;ENV2 LFO Trigger LFO1
+}
+{ ENV3 FM/FREE
+46 | 00 - 3F | val ;ENV3 Delay Time (0-63)
+47 | 00 - 3F | val ;ENV3 Attack Time (0-63)
+48 | 00 - 3F | val ;ENV3 Decay Time (0-63)
+49 | 00 - 3F | val ;ENV3 Sustain Level (0-63)
+4A | 00 - 3F | val ;ENV3 Release Time (0-63)
+4B | 00 - 3F | val ;ENV3 Amplitude (0-63)
+
+4D | 00 - 07 | val ;ENV3 Trigger 
+4D | 00 - 00 | 00  ;ENV3 Trigger Single
+4D | 01 - 01 | 01  ;ENV3 Trigger Single Reset
+4D | 02 - 02 | 02  ;ENV3 Trigger Multi  
+4D | 03 - 03 | 03  ;ENV3 Trigger Multi Reset
+4D | 04 - 04 | 04  ;ENV3 Trigger External Single
+4D | 05 - 05 | 05  ;ENV3 Trigger External Single Reset
+4D | 06 - 06 | 06  ;ENV3 Trigger External Multiple
+4D | 07 - 07 | 07  ;ENV3 Trigger External Multiple Reset
+
+4E | 00 - 03 | val ;ENV3 LFO Mode 
+4E | 00 - 00 | 00  ;ENV3 LFO Mode Normal
+4E | 01 - 01 | 01  ;ENV3 LFO Mode DADR
+4E | 02 - 02 | 02  ;ENV3 LFO Mode Freerun
+4E | 03 - 03 | 03  ;ENV3 LFO Mode Both
+
+4C | 00 - 7F | val ;ENV3 AMP Mod by VELOCITY (-63-63)
+
+4F | 00 - 02 | val ;ENV3 LFO Trigger 
+4F | 00 - 00 | 00  ;ENV3 LFO Trigger Off
+4F | 01 - 01 | 01  ;ENV3 LFO Trigger Gated LFO1
+4F | 02 - 02 | 02  ;ENV3 LFO Trigger LFO1
+}
