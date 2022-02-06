@@ -1,0 +1,8 @@
+SYSEX
+
+Buffer Edit Dump HEX
+f0 - start
+01h - DSI ID
+2Ah - Prophet 12 ID
+06h - Request Program Buffer Transmit
+f7 - end
